@@ -11,9 +11,3 @@ Rails.application.routes.draw do
   post("/entries/new", { :controller => "entries", :action => "create" })
 end
 
-Rails.application.routes.draw do
-  root "places#index"
-  resources :places do
-    resources :entries, only: [:new, :create]
-  end
-end
